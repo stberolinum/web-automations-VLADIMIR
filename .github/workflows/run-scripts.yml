@@ -1,0 +1,13 @@
+name: Run scripts
+
+on:
+  workflow_dispatch:        # запуск вручную кнопкой в GitHub
+  # schedule:
+  #   - cron: "0 6 * * *"   # раскомментировать для запуска каждый день в 06:00 UTC
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./scripts/hello.sh
